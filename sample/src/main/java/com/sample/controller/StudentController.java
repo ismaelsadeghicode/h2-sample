@@ -23,4 +23,14 @@ public class StudentController {
         return ResponseEntity.ok(repository.findAll());
     }
 
+    @PutMapping
+    public ResponseEntity update(@RequestBody Student student) {
+        return ResponseEntity.ok(repository.save(student));
+    }
+
+    @DeleteMapping
+    public void delete(@RequestBody Student student) {
+        repository.delete(student);
+    }
+
 }
